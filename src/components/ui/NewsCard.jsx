@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import CategoryPill from './CategoryPill.jsx'
 
 /**
  * News / notice card.
@@ -10,14 +11,7 @@ import { Link } from 'react-router-dom'
  *  - excerpt:  one-sentence summary
  *  - href:     internal path or placeholder ("#")
  */
-const TAG_STYLES = {
-  'Official Notice': 'border-gold text-gold',
-  Newsletter: 'border-warm text-warm',
-  News: 'border-forest text-forest',
-}
-
 export default function NewsCard({ category, date, headline, excerpt, href = '#' }) {
-  const tag = TAG_STYLES[category] || TAG_STYLES.News
   const isInternal = href.startsWith('/')
 
   const readMoreClass =
@@ -37,11 +31,7 @@ export default function NewsCard({ category, date, headline, excerpt, href = '#'
   return (
     <article className="flex h-full flex-col border border-warm/15 bg-white p-7 transition-shadow hover:shadow-[0_8px_30px_rgba(28,25,23,0.08)]">
       <div className="flex items-center gap-4">
-        <span
-          className={`border px-3 py-1 font-mono text-[0.68rem] font-medium uppercase tracking-[0.16em] ${tag}`}
-        >
-          {category}
-        </span>
+        <CategoryPill category={category} variant="filled" />
         <time className="font-mono text-xs uppercase tracking-wide text-warm">
           {date}
         </time>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PageHeader from '../components/ui/PageHeader.jsx'
+import CategoryPill from '../components/ui/CategoryPill.jsx'
 
 const TABS = [
   { label: 'All', match: null },
@@ -7,12 +8,6 @@ const TABS = [
   { label: 'Official Notices', match: 'Official Notice' },
   { label: 'Newsletters', match: 'Newsletter' },
 ]
-
-const TAG_STYLES = {
-  'Official Notice': 'border-gold text-gold',
-  Newsletter: 'border-warm text-warm',
-  News: 'border-forest text-forest',
-}
 
 const ITEMS = [
   {
@@ -103,13 +98,7 @@ export default function News() {
               className="group flex flex-col gap-5 py-9 md:flex-row md:gap-10"
             >
               <div className="flex shrink-0 flex-col gap-3 md:w-48">
-                <span
-                  className={`w-fit border px-3 py-1 font-mono text-[0.68rem] font-medium uppercase tracking-[0.16em] ${
-                    TAG_STYLES[item.category]
-                  }`}
-                >
-                  {item.category}
-                </span>
+                <CategoryPill category={item.category} variant="filled" />
                 <time className="font-mono text-xs uppercase tracking-wide text-warm">
                   {item.date}
                 </time>
