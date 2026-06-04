@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Town of Eatonville — Design Tokens (Tailwind v4 CSS-first)
+   ============================================================ */
+@theme {
+  /* Brand palette */
+  --color-forest: #1b4332; /* primary */
+  --color-gold: #c9952a; /* accent */
+  --color-cream: #faf7f0; /* backgrounds */
+  --color-ink: #1c1917; /* text / near-black */
+  --color-warm: #6b5b45; /* secondary text, dividers */
+
+  /* Typography — three families only */
+  --font-spectral: "Spectral", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-cinzel: "Cinzel", Georgia, serif;
+
+  /* Reading measure */
+  --breakpoint-prose: 720px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-spectral);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-spectral);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Visible focus for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+
+/* Wide-tracked small-caps eyebrow — Label role (IBM Plex Mono 500) */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+/* CSS-only linen / grain overlay on forest green.
+   No image file — fractal-noise SVG encoded inline. */
+.texture-linen {
+  background-color: var(--color-forest);
+  position: relative;
+  isolation: isolate;
+}
+.texture-linen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  /* very soft vignette so the panel feels lit, not flat */
+  mask-image: radial-gradient(120% 120% at 50% 30%, #000 55%, transparent 100%);
+}
+.texture-linen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 90% at 50% 0%,
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
+  );
+}
+
+/* Gold ornamental section rule (used in editorial layout) */
+.rule-ornament {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  margin: 3.5rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold) 20%,
+    var(--color-gold) 80%,
+    transparent
+  );
+  position: relative;
+  opacity: 0.7;
+}
+.rule-ornament::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  background: var(--color-gold);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Editorial prose body */
+.prose-editorial {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: var(--color-ink);
+}
+.prose-editorial p {
+  margin: 0 0 1.6rem;
+}
+.prose-editorial a {
+  color: var(--color-forest);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-underline-offset: 4px;
+}
+
+/* Animated mobile-overlay entrance */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.18s ease-out both;
+}
