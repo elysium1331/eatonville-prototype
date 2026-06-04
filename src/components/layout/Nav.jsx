@@ -66,14 +66,14 @@ function TwentySevenMark({ onClick }) {
     <Link
       to="/"
       onClick={onClick}
-      className="mr-4 flex items-center"
+      className="mr-5 flex items-center"
       aria-label="Town of Eatonville — Home"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
-        width="36"
-        height="36"
+        width="48"
+        height="48"
         stroke="#C9952A"
         strokeWidth={1.3}
         strokeLinecap="round"
@@ -124,7 +124,7 @@ function TwentySevenMark({ onClick }) {
  */
 const mainLinkClass = ({ isActive }) =>
   [
-    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-[15px] font-medium tracking-[0.045em] transition-colors',
+    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-[17px] font-medium tracking-[0.045em] transition-colors',
     'after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full',
     'after:origin-left after:scale-x-0 after:bg-gold after:transition-transform',
     'hover:text-gold! hover:after:scale-x-100',
@@ -133,7 +133,7 @@ const mainLinkClass = ({ isActive }) =>
 
 const dropdownItemClass = ({ isActive }) =>
   [
-    'small-caps block px-5 py-3 font-spectral text-[14px] font-medium tracking-[0.045em] transition-colors',
+    'small-caps block px-5 py-3 font-spectral text-[16px] font-medium tracking-[0.045em] transition-colors',
     isActive
       ? 'text-gold!'
       : 'text-cream! hover:bg-white/5 hover:text-gold!',
@@ -271,7 +271,7 @@ function MobileItem({ item, onNavigate }) {
                 onClick={onNavigate}
                 className={({ isActive }) =>
                   [
-                    'small-caps block py-3 font-spectral text-[20px] font-medium tracking-[0.045em] transition-colors',
+                    'small-caps block py-3 font-spectral text-[22px] font-medium tracking-[0.045em] transition-colors',
                     isActive
                       ? 'text-gold!'
                       : 'text-cream/75! hover:text-gold!',

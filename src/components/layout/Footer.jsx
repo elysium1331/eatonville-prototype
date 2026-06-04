@@ -34,7 +34,7 @@ export default function Footer() {
         {/* Left — identity & contact */}
         <div>
           <img
-            src="/primary-on-green.png"
+            src="/centered-on-green.png"
             alt="The Town of Eatonville"
             className="w-full max-w-[200px] md:max-w-[280px]"
           />
