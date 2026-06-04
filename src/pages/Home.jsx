@@ -45,9 +45,22 @@ const NEWS = [
 export default function Home() {
   return (
     <>
-      {/* ── Hero ───────────────────────────────────────────── */}
-      <section className="texture-linen flex min-h-[calc(100vh-5rem)] items-center">
-        <div className="mx-auto w-full max-w-6xl px-6 py-24">
+      {/* ── Hero — full-bleed image with dark overlay ──────── */}
+      <section
+        className="relative flex min-h-[480px] items-center bg-[#0F2319] bg-cover bg-center md:min-h-[580px]"
+        style={{ backgroundImage: 'url(/home-hero.png)' }}
+      >
+        {/* Dark gradient overlay keeps the text legible over the photo */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(15, 35, 25, 0.82), rgba(15, 35, 25, 0.55))',
+          }}
+        />
+
+        {/* Hero content — sits above the overlay */}
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24">
           <p className="eyebrow text-gold">
             Eatonville, Florida · Est. 1887
           </p>
