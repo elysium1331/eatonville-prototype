@@ -81,6 +81,11 @@ h4 {
   letter-spacing: 0.22em;
 }
 
+/* Small-caps treatment for Spectral nav links (Nav redesign — Direction 02) */
+.small-caps {
+  font-variant: small-caps;
+}
+
 /* CSS-only linen / grain overlay on forest green.
    No image file — fractal-noise SVG encoded inline. */
 .texture-linen {

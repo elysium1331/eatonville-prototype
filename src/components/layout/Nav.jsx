@@ -64,7 +64,7 @@ function Wordmark({ onClick }) {
       <img
         src="/compact-motto-on-green.png"
         alt="The Town of Eatonville — The Town That Freedom Built"
-        className="h-10 w-auto md:h-[52px]"
+        className="h-[60px] w-auto"
       />
     </Link>
   )
@@ -74,13 +74,14 @@ function Wordmark({ onClick }) {
  * NOTE on the `!` (important) color utilities below:
  * styles/index.css wraps its anchor reset in `@layer base`, but a couple of
  * other resets remain effectively at parity, so keeping the important
- * modifier guarantees the intended color in every state. The nav bar is now
- * permanently forest green, so main links are cream by default and gold on
- * hover / active, with a gold underline on the active route.
+ * modifier guarantees the intended color in every state. The nav bar is a
+ * near-black forest (#0F2319), so links are cream by default and gold on
+ * hover / active, with a gold underline on the active route. Link type is
+ * Spectral 500 small-caps (Nav redesign — Direction 02).
  */
 const mainLinkClass = ({ isActive }) =>
   [
-    'relative inline-flex items-center gap-1 py-1 font-mono text-sm font-medium uppercase tracking-[0.08em] transition-colors',
+    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-sm font-medium tracking-[0.045em] transition-colors',
     'after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full',
     'after:origin-left after:scale-x-0 after:bg-gold after:transition-transform',
     'hover:text-gold! hover:after:scale-x-100',
@@ -89,7 +90,7 @@ const mainLinkClass = ({ isActive }) =>
 
 const dropdownItemClass = ({ isActive }) =>
   [
-    'block px-5 py-3 font-mono text-sm font-medium transition-colors',
+    'small-caps block px-5 py-3 font-spectral text-sm font-medium tracking-[0.045em] transition-colors',
     isActive
       ? 'text-gold!'
       : 'text-cream! hover:bg-white/5 hover:text-gold!',
@@ -176,7 +177,7 @@ function MobileItem({ item, onNavigate }) {
           onClick={onNavigate}
           className={({ isActive }) =>
             [
-              'block py-5 font-mono text-2xl font-medium tracking-tight transition-colors',
+              'small-caps block py-5 font-spectral text-2xl font-medium tracking-[0.045em] transition-colors',
               isActive ? 'text-gold!' : 'text-cream! hover:text-gold!',
             ].join(' ')
           }
@@ -195,7 +196,7 @@ function MobileItem({ item, onNavigate }) {
           onClick={onNavigate}
           className={({ isActive }) =>
             [
-              'block py-5 font-mono text-2xl font-medium tracking-tight transition-colors',
+              'small-caps block py-5 font-spectral text-2xl font-medium tracking-[0.045em] transition-colors',
               isActive ? 'text-gold!' : 'text-cream! hover:text-gold!',
             ].join(' ')
           }
@@ -227,7 +228,7 @@ function MobileItem({ item, onNavigate }) {
                 onClick={onNavigate}
                 className={({ isActive }) =>
                   [
-                    'block py-3 font-mono text-sm font-medium transition-colors',
+                    'small-caps block py-3 font-spectral text-sm font-medium tracking-[0.045em] transition-colors',
                     isActive
                       ? 'text-gold!'
                       : 'text-cream/75! hover:text-gold!',
@@ -277,7 +278,7 @@ export default function Nav() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-cream/10 bg-forest">
+      <header className="sticky top-0 z-40 border-b border-[rgba(201,149,42,0.25)] bg-[#0F2319] shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:py-4">
           <Wordmark />
 
@@ -311,7 +312,7 @@ export default function Nav() {
           header's backdrop-filter does not become its containing block
           (which would clip `fixed inset-0` to the 80px header box). */}
       {mobileOpen && (
-        <div className="animate-fade-in fixed inset-0 z-[60] flex flex-col bg-forest lg:hidden">
+        <div className="animate-fade-in fixed inset-0 z-[60] flex flex-col bg-[#0F2319] lg:hidden">
           <div className="flex shrink-0 items-center justify-between px-6 py-3">
             <Wordmark onClick={() => setMobileOpen(false)} />
             <button
