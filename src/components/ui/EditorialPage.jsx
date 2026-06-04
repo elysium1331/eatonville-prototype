@@ -129,16 +129,18 @@ export default function EditorialPage({
         <article className="mx-auto w-full max-w-[680px]">{children}</article>
 
         {factsLabel && (
-          <aside className="mt-14 lg:mt-0">
-            <div className="sticky top-28 border border-warm/20 bg-cream p-8">
-              <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-forest">
+          <aside className="mt-14 lg:mt-0 lg:sticky lg:top-[120px]">
+            <div className="border-l-2 border-forest bg-cream p-6">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
                 {factsLabel}
-              </h2>
-              <div className="mt-5 h-px w-full bg-gold/40" />
-              <dl className="mt-5 space-y-5">
-                {facts.map(([label, value]) => (
-                  <div key={label}>
-                    <dt className="font-mono text-[0.7rem] font-medium uppercase tracking-[0.16em] text-warm">
+              </p>
+              <dl className="mt-5">
+                {facts.map(([label, value], i) => (
+                  <div
+                    key={label}
+                    className={i > 0 ? 'mt-4 border-t border-gold/30 pt-4' : ''}
+                  >
+                    <dt className="font-mono text-[11px] uppercase tracking-[0.15em] text-warm">
                       {label}
                     </dt>
                     <dd className="mt-1 font-spectral text-[15px] font-medium leading-snug text-ink">
