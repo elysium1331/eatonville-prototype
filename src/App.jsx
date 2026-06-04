@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Routes, Route, Outlet, useLocation, Link } from 'react-router-dom'
 
+import SiteHeader from './components/layout/SiteHeader.jsx'
 import Nav from './components/layout/Nav.jsx'
 import Footer from './components/layout/Footer.jsx'
 
@@ -51,6 +52,7 @@ function ScrollToTop() {
 function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-cream">
+      <SiteHeader />
       <Nav />
       <main className="flex-1">
         <Outlet />

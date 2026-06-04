@@ -53,19 +53,62 @@ const NAV = [
   { label: 'News & Notices', to: '/news' },
 ]
 
-function Wordmark({ onClick }) {
+/**
+ * The "twenty-seven" sun mark — 27 rays (one per founding voter) plus a
+ * center dot. Inlined from public/twenty-seven-gold.svg; the shared stroke
+ * attributes are hoisted onto the parent <svg> so they inherit to every
+ * <line> (the center <circle> overrides with its own fill / no stroke).
+ * Acts as the Nav's left-side home anchor — the only branding once the
+ * SiteHeader above scrolls away.
+ */
+function TwentySevenMark({ onClick }) {
   return (
     <Link
       to="/"
       onClick={onClick}
-      className="flex items-center"
+      className="mr-4 flex items-center"
       aria-label="Town of Eatonville — Home"
     >
-      <img
-        src="/compact-motto-on-green.png"
-        alt="The Town of Eatonville — The Town That Freedom Built"
-        className="h-[60px] w-auto"
-      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        width="36"
+        height="36"
+        stroke="#C9952A"
+        strokeWidth={1.3}
+        strokeLinecap="round"
+        role="img"
+        aria-label="Town of Eatonville — twenty-seven founders mark"
+      >
+        <line x1="50.00" y1="31.00" x2="50.00" y2="5.00" />
+        <line x1="54.38" y1="31.51" x2="58.30" y2="14.97" />
+        <line x1="58.53" y1="33.02" x2="70.20" y2="9.79" />
+        <line x1="62.21" y1="35.45" x2="73.14" y2="22.42" />
+        <line x1="65.24" y1="38.65" x2="86.10" y2="23.13" />
+        <line x1="67.45" y1="42.47" x2="83.06" y2="35.74" />
+        <line x1="68.71" y1="46.70" x2="94.32" y2="42.19" />
+        <line x1="68.97" y1="51.10" x2="85.94" y2="52.09" />
+        <line x1="68.20" y1="55.45" x2="93.11" y2="62.91" />
+        <line x1="66.45" y1="59.50" x2="81.18" y2="68.00" />
+        <line x1="63.82" y1="63.04" x2="82.73" y2="80.88" />
+        <line x1="60.44" y1="65.87" x2="69.78" y2="80.08" />
+        <line x1="56.50" y1="67.85" x2="65.39" y2="92.29" />
+        <line x1="52.21" y1="68.87" x2="54.18" y2="85.76" />
+        <line x1="47.79" y1="68.87" x2="44.78" y2="94.70" />
+        <line x1="43.50" y1="67.85" x2="37.69" y2="83.83" />
+        <line x1="39.56" y1="65.87" x2="25.27" y2="87.60" />
+        <line x1="36.18" y1="63.04" x2="23.81" y2="74.70" />
+        <line x1="33.55" y1="59.50" x2="11.03" y2="72.50" />
+        <line x1="31.80" y1="55.45" x2="15.51" y2="60.32" />
+        <line x1="31.03" y1="51.10" x2="5.08" y2="52.62" />
+        <line x1="31.29" y1="46.70" x2="14.55" y2="43.75" />
+        <line x1="32.55" y1="42.47" x2="8.68" y2="32.18" />
+        <line x1="34.76" y1="38.65" x2="21.12" y2="28.50" />
+        <line x1="37.79" y1="35.45" x2="21.07" y2="15.53" />
+        <line x1="41.47" y1="33.02" x2="33.84" y2="17.83" />
+        <line x1="45.62" y1="31.51" x2="39.62" y2="6.21" />
+        <circle cx="50" cy="50" r="2.4" fill="#C9952A" stroke="none" />
+      </svg>
     </Link>
   )
 }
@@ -81,7 +124,7 @@ function Wordmark({ onClick }) {
  */
 const mainLinkClass = ({ isActive }) =>
   [
-    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-sm font-medium tracking-[0.045em] transition-colors',
+    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-[15px] font-medium tracking-[0.045em] transition-colors',
     'after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full',
     'after:origin-left after:scale-x-0 after:bg-gold after:transition-transform',
     'hover:text-gold! hover:after:scale-x-100',
@@ -90,7 +133,7 @@ const mainLinkClass = ({ isActive }) =>
 
 const dropdownItemClass = ({ isActive }) =>
   [
-    'small-caps block px-5 py-3 font-spectral text-sm font-medium tracking-[0.045em] transition-colors',
+    'small-caps block px-5 py-3 font-spectral text-[14px] font-medium tracking-[0.045em] transition-colors',
     isActive
       ? 'text-gold!'
       : 'text-cream! hover:bg-white/5 hover:text-gold!',
@@ -228,7 +271,7 @@ function MobileItem({ item, onNavigate }) {
                 onClick={onNavigate}
                 className={({ isActive }) =>
                   [
-                    'small-caps block py-3 font-spectral text-sm font-medium tracking-[0.045em] transition-colors',
+                    'small-caps block py-3 font-spectral text-[20px] font-medium tracking-[0.045em] transition-colors',
                     isActive
                       ? 'text-gold!'
                       : 'text-cream/75! hover:text-gold!',
@@ -279,8 +322,8 @@ export default function Nav() {
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-[rgba(201,149,42,0.25)] bg-[#0F2319] shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:py-4">
-          <Wordmark />
+        <nav className="mx-auto flex min-h-[60px] max-w-7xl items-center justify-between px-6 py-3 md:py-4">
+          <TwentySevenMark />
 
           {/* Desktop links */}
           <ul className="hidden items-center gap-9 lg:flex">
@@ -314,7 +357,7 @@ export default function Nav() {
       {mobileOpen && (
         <div className="animate-fade-in fixed inset-0 z-[60] flex flex-col bg-[#0F2319] lg:hidden">
           <div className="flex shrink-0 items-center justify-between px-6 py-3">
-            <Wordmark onClick={() => setMobileOpen(false)} />
+            <TwentySevenMark onClick={() => setMobileOpen(false)} />
             <button
               type="button"
               onClick={() => setMobileOpen(false)}
