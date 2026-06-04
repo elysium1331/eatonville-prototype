@@ -31,25 +31,13 @@ export default function Footer() {
   return (
     <footer className="bg-forest text-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
-        {/* Left — identity & contact */}
-        <div>
+        {/* Left — identity (logo fills the column, vertically centered) */}
+        <div className="flex items-center">
           <img
             src="/centered-on-green.png"
             alt="The Town of Eatonville"
-            className="w-full max-w-[200px] md:max-w-[280px]"
+            className="h-auto w-full max-w-[280px]"
           />
-          <address className="mt-6 space-y-1 font-spectral text-base not-italic text-cream/75">
-            <p>307 E. Kennedy Blvd</p>
-            <p>Eatonville, FL 32751</p>
-            <p className="pt-2">
-              <a
-                href="tel:+14076238900"
-                className="transition-colors hover:text-gold"
-              >
-                407-623-8900
-              </a>
-            </p>
-          </address>
         </div>
 
         {/* Center — site navigation */}
@@ -87,6 +75,15 @@ export default function Footer() {
             ))}
           </ul>
         </nav>
+      </div>
+
+      {/* Address / phone — full-width row between the grid and the copyright */}
+      <div className="border-t border-cream/15">
+        <div className="mx-auto max-w-7xl px-6 pt-8 pb-6">
+          <p className="font-mono text-[13px] text-cream/70">
+            307 E. Kennedy Blvd, Eatonville, FL 32751 | 407-623-8900
+          </p>
+        </div>
       </div>
 
       <div className="border-t border-cream/15">
