@@ -141,7 +141,7 @@ export default function EditorialPage({
                     <dt className="font-mono text-[0.7rem] font-medium uppercase tracking-[0.16em] text-warm">
                       {label}
                     </dt>
-                    <dd className="mt-1 font-mono text-sm leading-snug text-ink">
+                    <dd className="mt-1 font-spectral text-[15px] font-medium leading-snug text-ink">
                       {value}
                     </dd>
                   </div>
