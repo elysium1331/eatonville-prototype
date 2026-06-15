@@ -117,13 +117,14 @@ export default function About() {
             Main Street.
           </P>
           <P>
-            They had no land of their own, however. That changed in 1881, when
-            Lewis Lawrence, a Northern philanthropist and abolitionist who had
-            lately settled in Florida, purchased a parcel west of the lake and
-            resolved to sell it, lot by lot, to the Black families who already
-            lived and worked there. The terms were generous; the intention was
-            unmistakable. The town that grew on those lots would belong to the
-            people who built it.
+            They had no land of their own, however. That changed when Captain Josiah Eaton — 
+             one of the few white landowners in the area willing to sell to Black buyers — 
+             agreed to sell acreage to Lewis Lawrence, a Northern philanthropist who had 
+             lately settled in Florida, and to Joseph Clarke. Lawrence subdivided his portion, 
+             donating the first ten acres to the African Methodist Episcopal Church; 
+             Clarke continued to acquire additional lots until, by incorporation, 
+             Eatonville's original limits encompassed 112 acres. It was Lawrence who suggested 
+             the town be named for Eaton — the man whose willingness to sell had made it all possible.
           </P>
           <P>
             The name they chose honored Josiah Eaton — a white officer of the
@@ -161,11 +162,13 @@ export default function About() {
             The charter was filed with the State of Florida the same week.
           </P>
           <P>
-            The town’s first mayor was Joe Clarke, who kept a store and a porch
-            upon which, in the decades to follow, the better part of
-            Eatonville’s civic life would be conducted. Hurston wrote of that
-            porch — and the men and women who held court upon it — for the rest
-            of her career.
+            The town's first mayor was Columbus H. Boger, a reverend who would go 
+             on to edit the Florida Watchman newspaper. Joe Clarke — who kept a 
+             store and a porch upon which, in the decades to follow, the better 
+             part of Eatonville's civic life would be conducted — served as an 
+             alderman at incorporation and later became mayor himself. Hurston 
+             wrote of that porch — and the men and women who held court upon it — 
+             for the rest of her career.
           </P>
           <P>
             The first ordinances were practical and modest: a tax to fund the
@@ -222,9 +225,8 @@ export default function About() {
             In 1998, the Eatonville Historic District — comprising forty‑eight
             contributing buildings, the original street grid, and the
             founding‑era plat — was listed on the National Register of Historic
-            Places. It is a working district, not a museum. Families live in the
-            houses. Children walk to school past the same corner store Hurston
-            walked past a century ago.
+            Places. It is a working district, not a museum. Families live in the houses. 
+             Children walk to school past the same corners Hurston walked a century ago.
           </P>
 
           <OrnRule />
