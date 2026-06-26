@@ -19,7 +19,7 @@ export default function PageHeader({
     <header
       className={`${textured ? 'texture-linen' : bg} w-full`}
     >
-      <div className="mx-auto max-w-5xl px-6 py-10 md:py-14">
+      <div className="mx-auto max-w-5xl px-6 py-9 md:py-12">
         {eyebrow && (
           <p className="eyebrow text-gold">{eyebrow}</p>
         )}

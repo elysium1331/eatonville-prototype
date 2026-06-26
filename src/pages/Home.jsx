@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
+import { Receipt, PhoneCall, CalendarDays, FolderOpen } from 'lucide-react'
+import QuickAccessButton from '../components/ui/QuickAccessButton.jsx'
 import NewsCard from '../components/ui/NewsCard.jsx'
 
 const QUICK_ACCESS = [
-  { label: 'Pay My Bill', href: '#', target: '_blank' },
-  { label: 'Who To Call', href: '/government/departments' },
+  { icon: Receipt, label: 'Pay My Bill', href: '#', target: '_blank' },
+  { icon: PhoneCall, label: 'Who To Call', href: '/government/departments' },
   {
+    icon: CalendarDays,
     label: 'Meetings & Agendas',
     href: 'https://eatonville-fl.municodemeetings.com/',
     target: '_blank',
   },
-  { label: 'Public Records', href: '#', target: '_blank' },
+  { icon: FolderOpen, label: 'Public Records', href: '#', target: '_blank' },
 ]
 
 const NEWS = [
@@ -42,9 +45,9 @@ const NEWS = [
 export default function Home() {
   return (
     <>
-      {/* ── Hero — full-bleed image with dark overlay (half height) ── */}
+      {/* ── Hero — full-bleed image with dark overlay ──────── */}
       <section
-        className="relative flex min-h-[240px] items-center bg-[#0F2319] bg-cover bg-center md:min-h-[290px]"
+        className="relative flex min-h-[216px] items-center bg-[#0F2319] bg-cover bg-center md:min-h-[261px]"
         style={{ backgroundImage: 'url(/home-hero.png)' }}
       >
         {/* Dark gradient overlay keeps the text legible over the photo */}
@@ -57,7 +60,7 @@ export default function Home() {
         />
 
         {/* Hero content — sits above the overlay */}
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-12">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-10">
           <p className="eyebrow text-gold">
             Eatonville, Florida · Est. 1887
           </p>
@@ -69,35 +72,11 @@ export default function Home() {
           <p className="mt-7 max-w-2xl font-spectral text-lg italic text-cream/80 md:text-2xl">
             The oldest self-governing Black municipality in the United States.
           </p>
-
-          {/* Quick-access links (moved into the hero) — left-aligned row */}
-          <div className="mt-5 flex flex-wrap gap-3">
-            {QUICK_ACCESS.map((q) => {
-              const cls =
-                'inline-flex items-center border border-gold px-[14px] py-[6px] font-mono text-xs font-medium uppercase tracking-[0.1em] text-cream transition-colors hover:bg-gold hover:text-ink'
-              const isInternal = q.href?.startsWith('/') && !q.target
-              return isInternal ? (
-                <Link key={q.label} to={q.href} className={cls}>
-                  {q.label}
-                </Link>
-              ) : (
-                <a
-                  key={q.label}
-                  href={q.href}
-                  target={q.target}
-                  rel={q.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  className={cls}
-                >
-                  {q.label}
-                </a>
-              )
-            })}
-          </div>
         </div>
       </section>
 
-      {/* ── Primary CTAs (moved here from the hero) ────────── */}
-      <section className="border-t border-[rgba(201,149,42,0.3)] bg-forest">
+      {/* ── Primary CTAs — hidden on mobile so the 4 callout buttons lead ── */}
+      <section className="hidden border-t border-[rgba(201,149,42,0.3)] bg-forest md:block">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 sm:flex-row">
           <Link
             to="/our-town"
@@ -111,6 +90,15 @@ export default function Home() {
           >
             Resident Services →
           </Link>
+        </div>
+      </section>
+
+      {/* ── Quick Access — large centered icon callout buttons ── */}
+      <section className="border-t border-[rgba(201,149,42,0.3)] bg-forest">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-8 lg:grid-cols-4">
+          {QUICK_ACCESS.map((q) => (
+            <QuickAccessButton key={q.label} {...q} />
+          ))}
         </div>
       </section>
 
