@@ -63,7 +63,7 @@ function DarkGrid({ items }) {
         <Link
           key={item.to}
           to={item.to}
-          className="group flex flex-col border border-transparent bg-forest p-8 transition-colors duration-200 hover:border-gold"
+          className="group flex flex-col border-2 border-transparent bg-forest p-8 transition-colors duration-150 hover:border-gold"
         >
           <h2 className="font-spectral text-2xl font-semibold leading-snug text-cream">
             {item.title}

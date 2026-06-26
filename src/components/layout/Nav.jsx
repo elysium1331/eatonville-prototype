@@ -124,7 +124,7 @@ function TwentySevenMark({ onClick }) {
  */
 const mainLinkClass = ({ isActive }) =>
   [
-    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-[17px] font-medium tracking-[0.045em] transition-colors',
+    'small-caps relative inline-flex items-center gap-1 py-1 font-spectral text-[19px] font-medium tracking-[0.045em] transition-colors',
     'after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full',
     'after:origin-left after:scale-x-0 after:bg-gold after:transition-transform',
     'hover:text-gold! hover:after:scale-x-100',
@@ -133,7 +133,7 @@ const mainLinkClass = ({ isActive }) =>
 
 const dropdownItemClass = ({ isActive }) =>
   [
-    'small-caps block px-5 py-3 font-spectral text-[16px] font-medium tracking-[0.045em] transition-colors',
+    'small-caps block px-5 py-3 font-spectral text-[18px] font-medium tracking-[0.045em] transition-colors',
     isActive
       ? 'text-gold!'
       : 'text-cream! hover:bg-white/5 hover:text-gold!',
@@ -220,7 +220,7 @@ function MobileItem({ item, onNavigate }) {
           onClick={onNavigate}
           className={({ isActive }) =>
             [
-              'small-caps block py-5 font-spectral text-2xl font-medium tracking-[0.045em] transition-colors',
+              'small-caps block py-5 font-spectral text-[26px] font-medium tracking-[0.045em] transition-colors',
               isActive ? 'text-gold!' : 'text-cream! hover:text-gold!',
             ].join(' ')
           }
@@ -239,7 +239,7 @@ function MobileItem({ item, onNavigate }) {
           onClick={onNavigate}
           className={({ isActive }) =>
             [
-              'small-caps block py-5 font-spectral text-2xl font-medium tracking-[0.045em] transition-colors',
+              'small-caps block py-5 font-spectral text-[26px] font-medium tracking-[0.045em] transition-colors',
               isActive ? 'text-gold!' : 'text-cream! hover:text-gold!',
             ].join(' ')
           }
@@ -271,7 +271,7 @@ function MobileItem({ item, onNavigate }) {
                 onClick={onNavigate}
                 className={({ isActive }) =>
                   [
-                    'small-caps block py-3 font-spectral text-[22px] font-medium tracking-[0.045em] transition-colors',
+                    'small-caps block py-3 font-spectral text-[24px] font-medium tracking-[0.045em] transition-colors',
                     isActive
                       ? 'text-gold!'
                       : 'text-cream/75! hover:text-gold!',
