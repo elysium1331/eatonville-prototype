@@ -45,9 +45,17 @@ const NEWS = [
 export default function Home() {
   return (
     <>
-      {/* ── Hero — full-bleed image with dark overlay ──────── */}
+      {/* ── Mobile-only compact headline (image hero is hidden on mobile) ── */}
+      <section className="bg-[#0F2319] px-6 py-6 md:hidden">
+        <p className="eyebrow text-gold">Eatonville, Florida · Est. 1887</p>
+        <h1 className="mt-3 font-spectral text-[1.875rem] font-medium leading-[1.15] text-cream">
+          The Town That Freedom Built
+        </h1>
+      </section>
+
+      {/* ── Hero — full-bleed image (hidden on mobile; 4 callout buttons lead) ── */}
       <section
-        className="relative flex min-h-[216px] items-center bg-[#0F2319] bg-cover bg-center md:min-h-[261px]"
+        className="relative hidden min-h-[216px] items-center bg-[#0F2319] bg-cover bg-center md:flex md:min-h-[261px]"
         style={{ backgroundImage: 'url(/home-hero.png)' }}
       >
         {/* Dark gradient overlay keeps the text legible over the photo */}
@@ -72,24 +80,6 @@ export default function Home() {
           <p className="mt-7 max-w-2xl font-spectral text-lg italic text-cream/80 md:text-2xl">
             The oldest self-governing Black municipality in the United States.
           </p>
-        </div>
-      </section>
-
-      {/* ── Primary CTAs — hidden on mobile so the 4 callout buttons lead ── */}
-      <section className="hidden border-t border-[rgba(201,149,42,0.3)] bg-forest md:block">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 sm:flex-row">
-          <Link
-            to="/our-town"
-            className="inline-flex items-center justify-center border-2 border-gold px-8 py-4 font-mono text-sm font-medium uppercase tracking-[0.12em] text-gold transition-colors hover:bg-gold hover:text-ink"
-          >
-            Our Story →
-          </Link>
-          <Link
-            to="/residents"
-            className="inline-flex items-center justify-center border-2 border-cream px-8 py-4 font-mono text-sm font-medium uppercase tracking-[0.12em] text-cream transition-colors hover:bg-cream hover:text-forest"
-          >
-            Resident Services →
-          </Link>
         </div>
       </section>
 

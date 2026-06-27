@@ -21,7 +21,7 @@ export default function QuickAccessButton({ icon: Icon, label, href, target }) {
   const content = (
     <>
       {Icon && (
-        <Icon className="h-8 w-8" strokeWidth={1.75} aria-hidden="true" />
+        <Icon className="h-10 w-10" strokeWidth={1.75} aria-hidden="true" />
       )}
       <span className="font-mono text-xs font-medium uppercase tracking-[0.14em] lg:text-sm">
         {label}
